@@ -1,7 +1,12 @@
 from openai import OpenAI
+import os
+from dotenv import load_dotenv, find_dotenv
+from pathlib import Path
+load_dotenv(Path(".env"))
 
 client = OpenAI(
-    api_key = ""
+    api_key = os.getenv("OPENBOT_API_KEY")
+    
 )
 
 def chat_with_gpt(prompt):
